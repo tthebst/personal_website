@@ -2,13 +2,14 @@
 
 {% block content %}
 
-
-<div>
-    <h1 class="center" style="padding: 1em;text-align: center">Tim Gretler</h1>
+<div class="container-fluid" id="mainbox">
+    <h1 class="center" style="padding: 1em;text-align: center"><b><u>Tim's Personal Site</u></b></h1>
+    <h3><u>About me:</u></h3>
+    <p>{{ s }}</p>
     <p style="text-align: center">MY PERSONAL WEBSITE</p>
     <h3 class="center" style="padding-top: 3em;text-align: center">Under construction!!!!</h3>
 </div>
-<img class="center" src=" {{url_for('static', filename='img/builder_cat.jpg')}}" class="img-fluid"
-    alt="Responsive image">
+
+
 
 {% endblock %}
