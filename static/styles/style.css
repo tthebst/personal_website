@@ -20,7 +20,12 @@ img.center {
 {  border:3px solid black;
   margin-top: 2em;
   width: 70%;
-  height: 100%;
   min-width: 350px;
   margin-bottom: 2em;
+}
+.me
+{
+  width: 20em;
+  height: 20em;
+  margin-right: 3em;
 }

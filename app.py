@@ -11,10 +11,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    s = get_txt_aws("hallo.txt")
-    print(s)
+    aboutme = get_txt_aws("aboutme.txt")
 
-    return render_template("home.html", s=s)
+    return render_template("home.html", aboutme=aboutme)
 
 
 def get_txt_aws(filename):
@@ -27,7 +26,6 @@ def get_txt_aws(filename):
                       )
     bytes_buffer = io.BytesIO()
     obj = s3.download_fileobj(Bucket="my-personal-website-tim", Key=filename, Fileobj=bytes_buffer)
-
     byte_value = bytes_buffer.getvalue()
     print(byte_value)
     str_value = byte_value.decode()
