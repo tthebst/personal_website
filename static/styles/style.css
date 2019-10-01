@@ -3,6 +3,7 @@ body {
   font: 16px Arial;
 }
 
+
 img.center {
   display: block;
   margin: 0 auto;
@@ -37,4 +38,8 @@ img.center {
 .link{
   width: 1em;
   height: 1em;
+}
+.picture{
+  margin-top: 2em;
+  margin-bottom: 2em;
 }

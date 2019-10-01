@@ -3,9 +3,53 @@
 {% block content %}
 
 
+<div class="container-fluid" id="mainbox">
+
+    <div class="row">
+        <div class="col-2">
+            <a href="/"><img src="static/img/icons8-home-96.png" class="rounded icons img-fluid" alt="..."
+                    style="margin: 2.5em 2em 2em 2em"></a>
+        </div>
+        <div class="col-8">
+            <h1 class="center" style="padding: 1em;text-align: center"><b><u>My Wallpapers</u></b></h1>
+        </div>
+        <div class="col-2">
+
+        </div>
 
 
-<h1>hii</h1>
+    </div>
+
+
+
+    <div class="text-center">
+
+        <a href="/wallpapers_all"> <button type="button" class="btn btn-dark ">Load all Pictures (100+ Mb)</button></a>
+
+    </div>
+
+
+
+    <div class="container">
+        {% if showall%}
+        {% for item in picture_urls_all %}
+        <img src="{{ item }}" alt="" class="img-fluid picture">
+        {% endfor %}
+        {% else %}
+        {% for item in picture_urls_random %}
+        <img src="{{ item }}" alt="" class="img-fluid picture">
+        {% endfor %}
+        {% endif %}
+
+
+
+    </div>
+
+
+
+
+
+</div>
 
 
 
