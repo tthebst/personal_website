@@ -1,5 +1,5 @@
 FROM python:3.6
-RUN pip3 install flask gunicorn
+RUN pip3 install flask gunicorn boto3
 EXPOSE 80
 COPY . /app
 WORKDIR /app

@@ -5,26 +5,80 @@
 <div class="container-fluid" id="mainbox">
     <h1 class="center" style="padding: 1em;text-align: center"><b><u>Tim's Personal Site</u></b></h1>
 
-    <div>
-        <h4><u>About me:</u></h4>
-        <figure>
-            <img src="static/img/me.jpeg" class="rounded float-right me" alt="...">
-            <figcaption> Einstein and me</figcaption>
-        </figure>
-        <p>{{ aboutme }}</p>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <h4><u>About me:</u></h4>
+                </div>
+                <div class="row">
+                    {{ aboutme }}
+                </div>
+                <div class="row" style="margin-top: 1em">
+                    <h4><u>Contact:</u></h4>
+
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <a href="mailto: gretler.tim@gmail.com"> <img src="static/img/icons8-important-mail-100.png"
+                                class="roundeds icons img-fluid" alt="..."></a>
+                    </div>
+                    <div class="col-2"><a href="http://github.com/tthebst" target="_blank"
+                            rel="noopener noreferrer"><img src="static/img/icons8-github-96.png"
+                                class="rounded icons img-fluid" alt="..."></a>
+                    </div>
+                    <div class="col-2"><a href="http://linkedin.com/in/tim-gretler" target="_blank"
+                            rel="noopener noreferrer"><img src="static/img/icons8-linkedin-96.png"
+                                class="rounded icons img-fluid" alt="..."></a>
+                    </div>
+
+                </div>
+                <div class="row" style="margin-top: 1em">
+                    <h4><u>Projects:</u></h4>
+                </div>
+                <div class="row">
+                    <ul>
+                        <li>Isolated word recognition using deep neural networks <a href="https://www.speechgroup.ch"
+                                target="_blank" rel="noopener noreferrer"><img
+                                    src="static/img/icons8-external-link-90.png" class="rounded icons link"
+                                    alt="..."></a>
+                        </li>
+                        <li>Kubernetes on raspberry pi's <a href="https://github.com/tthebst/k8s" target="_blank"
+                                rel="noopener noreferrer"><img src="static/img/icons8-external-link-90.png"
+                                    class="rounded icons link img-fluid" alt="..."></a> </li>
+                    </ul>
+
+                </div>
+                <div class="row" style="margin-top: 1em">
+                    <h4><u>Wallpapers:</u> <a href="/wallpapers"> <img src="static/img/icons8-external-link-90.png"
+                                class="rounded icons link img-fluid" alt="..."></a> </h4>
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="col-4 container-fluid">
+                <img src="static/img/me.jpeg" class="rounded img-fluid float-right me" alt="...">
+                <p style="text-align: center">Einstein and me</p>
+            </div>
+        </div>
+
+
+
 
     </div>
-    <div>
-        <h4><u>About me:</u></h4>
-        <p>{{ aboutme }}</p>
-    </div>
 
 
 
 
-    <p style="text-align: center">MY PERSONAL WEBSITE</p>
-    <h3 class="center" style="padding-top: 3em;text-align: center">Under construction!!!!</h3>
-    <img src="static/img/icons8-github-96.png" class="rounded float-right" alt="...">
+
 </div>
 
 

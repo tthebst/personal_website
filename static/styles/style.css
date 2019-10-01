@@ -27,5 +27,14 @@ img.center {
 {
   width: 20em;
   height: 20em;
-  margin-right: 3em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+.icons{
+  width: 3em;
+  height: 3em;
+}
+.link{
+  width: 1em;
+  height: 1em;
 }

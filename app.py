@@ -16,6 +16,13 @@ def hello():
     return render_template("home.html", aboutme=aboutme)
 
 
+@app.route("/wallpapers")
+def wallpapers():
+    aboutme = get_txt_aws("aboutme.txt")
+
+    return render_template("wallpapers.html", aboutme=aboutme)
+
+
 def get_txt_aws(filename):
     s3 = boto3.client('s3',
                       # aws_access_key_id=os.environ['AWS-ACCESS-KEY-ID'],
