@@ -13,8 +13,9 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     aboutme = get_txt_aws("aboutme.txt")
+    resume = get_signed_url("resume.pdf")
 
-    return render_template("home.html", aboutme=aboutme)
+    return render_template("home.html", aboutme=aboutme, resume=resume)
 
 
 @app.route("/wallpapers")
