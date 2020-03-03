@@ -53,7 +53,6 @@ def get_txt_aws(filename):
     bytes_buffer = io.BytesIO()
     obj = s3.download_fileobj(Bucket="my-personal-website-tim", Key=filename, Fileobj=bytes_buffer)
     byte_value = bytes_buffer.getvalue()
-    print(byte_value)
     str_value = byte_value.decode()
     print(str_value)
     return str_value
@@ -61,9 +60,8 @@ def get_txt_aws(filename):
 
 def get_s3_client():
     s3 = boto3.client('s3',
-                      # aws_access_key_id=os.environ['AWS-ACCESS-KEY-ID'],
-                      # aws_secret_access_key=['AWS-SECRET-ACCESS-KEY'],
-
+                      aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
+                      aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY'],
                       config=Config(signature_version='s3v4'),
                       region_name='eu-central-1'
                       )
