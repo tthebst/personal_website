@@ -8,5 +8,3 @@ workflows:
             image: personal_web
             registry-url: gcr.io
             path: ..
-            google-project-id: ml-webpage-264418
-            gcloud-service-key: $GCLOUD_SERVICE_KEY
