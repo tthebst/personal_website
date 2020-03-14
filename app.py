@@ -7,6 +7,7 @@ import boto3
 import io
 import random
 from botocore.client import Config
+
 app = Flask(__name__)
 
 
@@ -60,7 +61,9 @@ def get_txt_aws(filename):
 def get_s3_client():
     s3 = boto3.client('s3',
                       config=Config(signature_version='s3v4'),
-                      region_name='eu-central-1'
+                      region_name='eu-central-1',
+                      aws_secret_access_key=os.environ["aws_secret_access_key"],
+                      aws_access_key_id=os.environ["aws_access_key_id"]
                       )
     return s3
 
@@ -70,4 +73,5 @@ def get_signed_url(location):
     url = s3.generate_presigned_url(
         ClientMethod="get_object", Params={"Bucket": "my-personal-website-tim", "Key": location}
     )
+
     return url
