@@ -7,4 +7,3 @@ workflows:
         - gcp-gcr/build-and-push-image:
             image: personal_web
             registry-url: gcr.io
-            path: ..
