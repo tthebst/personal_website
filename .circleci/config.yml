@@ -7,29 +7,29 @@ jobs:
     build_and_deploy:
         docker:
         - image: 'cimg/base:stable'
-    steps:
-        - checkout
-        - cloudrun/init
-        - cloudrun/build:
-            tag: 'gcr.io/ml-webpage-264418/personal-webpage'
-        - cloudrun/deploy:
-            image: 'gcr.io/ml-webpage-264418/personal-webpage'
-            platform: managed
-            region: us-east1
-            service-name: personal-webpage
-            unauthenticated: true
-            args: "--set-env-vars: [aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]"
-        - run:
-            command: >
-                # A simple example of how a deployed managed service could be
-                verified or further tested.
+        steps:
+            - checkout
+            - cloudrun/init
+            - cloudrun/build:
+                tag: 'gcr.io/ml-webpage-264418/personal-webpage'
+            - cloudrun/deploy:
+                image: 'gcr.io/ml-webpage-264418/personal-webpage'
+                platform: managed
+                region: us-east1
+                service-name: personal-webpage
+                unauthenticated: true
+                args: "--set-env-vars: [aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]"
+            - run:
+                command: >
+                    # A simple example of how a deployed managed service could be
+                    verified or further tested.
 
-                # This step will send request our "API" and fail if there is
-                unexpected output.
+                    # This step will send request our "API" and fail if there is
+                    unexpected output.
 
-                GCP_API_RESULTS=$(curl -s "$GCP_DEPLOY_ENDPOINT")
-                fi
-            name: Test managed deployed service.
+                    GCP_API_RESULTS=$(curl -s "$GCP_DEPLOY_ENDPOINT")
+                    fi
+                name: Test managed deployed service.
 workflows:
     build_and_deploy_to_managed_workflow:
         jobs:
