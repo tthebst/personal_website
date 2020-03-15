@@ -4,7 +4,6 @@ jobs:
         - image: 'cimg/base:stable'
         steps:
             - checkout
-            - cloudrun/init
             - cloudrun/build:
                 tag: 'gcr.io/ml-webpage-264418/personal-webpage'
             - cloudrun/deploy:
