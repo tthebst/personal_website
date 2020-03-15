@@ -8,10 +8,10 @@ jobs:
             - image: 'cimg/base:stable'
         steps:
             - checkout
-            - cloudrun/init
-            - cloudrun/build:
+            - gcp-cloud-run/init
+            - gcp-cloud-run/build:
                 tag: 'gcr.io/ml-webpage-264418/personal-webpage'
-            - cloudrun/deploy:
+            - gcp-cloud-run/deploy:
                 image: 'gcr.io/ml-webpage-264418/personal-webpage'
                 platform: managed
                 region: us-east1
