@@ -18,7 +18,8 @@ jobs:
                 service-name: personal-webpage-circle
                 unauthenticated: true
                 args: >-
-                    --update-env-vars=[aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]
+                    --update-env-vars=aws_secret_access_key=${aws_secret_access_key}
+                    --update-env-vars=aws_access_key_id=${aws_access_key_id}
             - run:
                 command: >
                     echo '--update-env-vars=[aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]'
