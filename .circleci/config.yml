@@ -17,7 +17,7 @@ jobs:
                 region: us-east1
                 service-name: personal-webpage
                 unauthenticated: true
-                args: "--set-env-vars: [aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]"
+                args: "--set-env-vars: [aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}] --allow-unauthenticated"
             - run:
                 command: >
                     # A simple example of how a deployed managed service could be
@@ -27,7 +27,7 @@ jobs:
                     unexpected output.
 
                     GCP_API_RESULTS=$(curl -s "$GCP_DEPLOY_ENDPOINT")
-                    fi
+                    echo $GCP_API_RESULTS
                 name: Test managed deployed service.
 
 
