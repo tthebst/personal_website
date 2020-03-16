@@ -17,7 +17,7 @@ jobs:
                 region: europe-west4
                 service-name: personal-webpage-circle
                 unauthenticated: true
-                args: '--set-env-vars aws_secret_access_key=${aws_secret_access_key}  --set-env-vars aws_access_key_id=${aws_access_key_id}'
+                args: '--set-env-vars=[aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]'
             - run:
                 command: >
                     # A simple example of how a deployed managed service could be
