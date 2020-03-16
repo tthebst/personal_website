@@ -18,11 +18,12 @@ jobs:
                 service-name: personal-webpage-circle
                 unauthenticated: true
                 args: >-
-                    --update-env-vars=aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}
-                    --update-env-vars=aws_access_key_id=${AWS_ACCESS_KEY_ID}
+                    --update-env-vars=aws_secret_access_key=${aws_secret_access_key}
+                    --update-env-vars=aws_access_key_id=${aws_access_key_id}
             - run:
                 command: >
-                    echo --update-env-vars=[aws_secret_access_key=${AWS_SECRET_ACCESS_KEY},aws_access_key_id=${AWS_ACCESS_KEY_ID}]
+                    echo ${aws_secret_access_key}
+                    echo --update-env-vars=[aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]
                     # A simple example of how a deployed managed service could be
                     verified or further tested.
 
