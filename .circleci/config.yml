@@ -9,6 +9,9 @@ jobs:
         steps:
             - checkout
             - gcp-cloud-run/init
+            - run:
+                command: |
+                  pipenv run python3 test.py
             - gcp-cloud-run/build:
                 tag: 'gcr.io/ml-webpage-264418/personal-webpage'
             - gcp-cloud-run/deploy:
@@ -17,7 +20,7 @@ jobs:
                 region: europe-west4
                 service-name: personal-webpage-circle
                 unauthenticated: true
-                args: --update-env-vars=[aws_secret_access_key=HALLO,aws_access_key_id=HALLO]
+                args: --update-env-vars=[aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]
             - run:
                 command: >
                     echo --update-env-vars=[aws_secret_access_key=${aws_secret_access_key},aws_access_key_id=${aws_access_key_id}]
