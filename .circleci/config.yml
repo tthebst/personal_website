@@ -9,11 +9,11 @@ jobs:
         steps:
             - checkout
             - gcp-cloud-run/init
-            - run:
-                command: |
-                  python3 test.py
             - gcp-cloud-run/build:
                 tag: 'gcr.io/ml-webpage-264418/personal-webpage'
+            - run:
+                command: |
+                    python3 test.py
             - gcp-cloud-run/deploy:
                 image: 'gcr.io/ml-webpage-264418/personal-webpage'
                 platform: managed
