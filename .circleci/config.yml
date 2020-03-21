@@ -11,10 +11,6 @@ jobs:
             - gcp-cloud-run/init
             - gcp-cloud-run/build:
                 tag: 'gcr.io/ml-webpage-264418/personal-webpage'
-            - run:
-                command: |
-                    sudo pip install flask
-                    python3 test.py
             - gcp-cloud-run/deploy:
                 image: 'gcr.io/ml-webpage-264418/personal-webpage'
                 platform: managed
