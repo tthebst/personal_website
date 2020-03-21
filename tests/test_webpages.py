@@ -10,6 +10,17 @@ def test_home_page(client):
   response = client.get('/')
   assert response.status_code == 200
 
+def test_wallpapers(client):
+  response = client.get('/wallpapers')
+  assert response.status_code == 200
+
+def test_wallpapers_all(client):
+  response = client.get('/wallpapers_all')
+  assert response.status_code == 200
+
+
+
+
 @pytest.fixture
 def client():
   client = app.test_client()
