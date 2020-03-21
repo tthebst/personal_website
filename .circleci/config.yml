@@ -8,9 +8,9 @@ jobs:
         docker:
             - image: 'python:3.7.7'
         steps:
-            run:
+            - run:
                 command: pip install Flask boto3 pytest
-            run:
+            - run:
                 command: pytest
 
 
