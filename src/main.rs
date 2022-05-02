@@ -7,24 +7,24 @@ use yew_router::prelude::*;
 
 #[derive(Clone, Routable, PartialEq)]
 enum RootRoute {
-    #[at("/yew-template-for-github-io/")]
+    #[at("/")]
     Home,
-    #[at("/yew-template-for-github-io/:s")]
+    #[at("/:s")]
     Route,
 }
 
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
-    #[at("/yew-template-for-github-io/about")]
+    #[at("/about")]
     About,
     #[not_found]
-    #[at("/yew-template-for-github-io/404")]
+    #[at("/404")]
     NotFound,
 }
 
 fn root_route(routes: &RootRoute) -> Html {
     match routes {
-        RootRoute::Home => html! { <p class="text-4xl">{ "Yew Template. " }</p> },
+        RootRoute::Home => html! { <p class="text-4xl">{ "WIP" }</p> },
         RootRoute::Route => html! {
             <Switch<Route> render={Switch::render(switch)} />
         },
