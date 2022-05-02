@@ -17,7 +17,7 @@ enum RootRoute {
 
 fn root_route(routes: &RootRoute) -> Html {
     match routes {
-        RootRoute::Home => html! { <p class="text-4xl">{ "Yew Template" }</p> },
+        RootRoute::Home => html! { <p class="text-4xl">{ "WIP" }</p> },
         RootRoute::About => html! { <p>{ "About" }</p> },
         RootRoute::NotFound => html! { <p>{ "Not Found" }</p> },
     }
